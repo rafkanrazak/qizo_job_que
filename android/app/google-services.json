@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "42309991239",
+    "project_id": "qizojobque",
+    "storage_bucket": "qizojobque.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:42309991239:android:b9a8bb2c1e2aadccddea62",
+        "android_client_info": {
+          "package_name": "com.qizo.job.que.qizo_job_que"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "42309991239-b5cb69fgm58d7drnl4cce6v2920e3blp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmoiM0VlDvRfinu-1jvtw9HbM9zlbk2Ng"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "42309991239-b5cb69fgm58d7drnl4cce6v2920e3blp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
