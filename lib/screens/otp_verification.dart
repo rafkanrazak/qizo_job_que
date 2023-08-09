@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/style.dart';
+import 'package:qizo_job_que/screens/homepage.dart';
 
 class otpverfication_pg extends StatefulWidget {
   const otpverfication_pg({super.key});
@@ -68,11 +69,11 @@ class _otpverfication_pgState extends State<otpverfication_pg> {
                 height: 50,
                 child: ElevatedButton(
                     onPressed: () {
-                      // signInWithPhone();
+                      //  signInWithPhone();
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const otpverfication_pg()),
+                            builder: (context) => const home_pg()),
                       );
                     },
                     style:
