@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qizo_job_que/screens/employee_registration.dart';
+import 'package:qizo_job_que/screens/employer_registration.dart';
 import 'package:qizo_job_que/screens/student_registration.dart';
 
 class home_pg extends StatefulWidget {
@@ -27,9 +28,9 @@ class _home_pgState extends State<home_pg> {
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => Employee_reg()));
         break;
-      // case 1:
-      //   Navigator.push(context, MaterialPageRoute(builder: (context) =>Student_reg()));
-      //   break;
+      case 1:
+        Navigator.push(context, MaterialPageRoute(builder: (context) =>Employer_reg()));
+        break;
       case 2:
         Navigator.push(context, MaterialPageRoute(builder: (context) =>Student_reg ()));
         break;

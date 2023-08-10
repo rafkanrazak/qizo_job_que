@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
+import 'package:qizo_job_que/screens/student_profile.dart';
 
 class Student_reg extends StatefulWidget {
   @override
@@ -20,8 +22,6 @@ class _Student_regState extends State<Student_reg> {
   String? _selectedGender;
   String? _selectedQualification;
   String? _selectedCVFile;
-
-
 
   Future<void> _pickCVFile() async {
     try {
@@ -43,13 +43,18 @@ class _Student_regState extends State<Student_reg> {
       print('Error picking file: $e');
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       appBar: AppBar(
+      appBar: AppBar(
         backgroundColor: Colors.lightBlue.shade900,
-        title: Center(child: Text('Student Registration Form',
-        style: TextStyle(fontWeight: FontWeight.bold),)),
+        title: Center(
+            child: Text(
+          'Student Registration Form',
+          style: GoogleFonts.aboreto(fontWeight: FontWeight.bold,
+          fontSize: 16),
+        )),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -62,7 +67,8 @@ class _Student_regState extends State<Student_reg> {
                 SizedBox(height: 5),
                 Text(
                   'Full Name*',
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                  style: GoogleFonts.aboreto(
+                      fontSize: 14, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 5),
                 TextFormField(
@@ -80,7 +86,8 @@ class _Student_regState extends State<Student_reg> {
                 SizedBox(height: 5),
                 Text(
                   'Email*',
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                  style: GoogleFonts.aboreto(
+                      fontSize: 14, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 5),
                 TextFormField(
@@ -110,7 +117,8 @@ class _Student_regState extends State<Student_reg> {
                                 firstDate: DateTime(1890),
                                 lastDate: DateTime(2100));
                             if (pickedDate != null) {
-                              _dobController.text = DateFormat('yyyy-MM-dd').format(pickedDate);
+                              _dobController.text =
+                                  DateFormat('yyyy-MM-dd').format(pickedDate);
                             }
                           },
                           decoration: InputDecoration(
@@ -125,7 +133,8 @@ class _Student_regState extends State<Student_reg> {
                 SizedBox(height: 5),
                 Text(
                   'Address*',
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                  style: GoogleFonts.aboreto(
+                      fontSize: 14, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 5),
                 TextFormField(
@@ -143,7 +152,8 @@ class _Student_regState extends State<Student_reg> {
                 SizedBox(height: 5),
                 Text(
                   'Phone-no*',
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                  style: GoogleFonts.aboreto(
+                      fontSize: 14, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 5),
                 TextFormField(
@@ -161,7 +171,8 @@ class _Student_regState extends State<Student_reg> {
                 SizedBox(height: 5),
                 Text(
                   'Choose Your Gender*',
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                  style: GoogleFonts.aboreto(
+                      fontSize: 14, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 5),
                 DropdownButtonFormField<String>(
@@ -187,7 +198,8 @@ class _Student_regState extends State<Student_reg> {
                 SizedBox(height: 5),
                 Text(
                   'Qualification*',
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                  style: GoogleFonts.aboreto(
+                      fontSize: 14, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 5),
                 DropdownButtonFormField<String>(
@@ -214,7 +226,8 @@ class _Student_regState extends State<Student_reg> {
                 SizedBox(height: 5),
                 Text(
                   'College Name*',
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                  style: GoogleFonts.aboreto(
+                      fontSize: 14, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 5),
                 TextFormField(
@@ -240,11 +253,11 @@ class _Student_regState extends State<Student_reg> {
                       },
                       child: Text(
                         'Choose Your CV',
-                        style: TextStyle(
-                          color: Colors.red.shade900,
-                          fontWeight: FontWeight.bold
-                          // decoration: TextDecoration.underline,
-                        ),
+                        style: GoogleFonts.aboreto(
+                            color: Colors.red.shade900,
+                            fontWeight: FontWeight.bold
+                            // decoration: TextDecoration.underline,
+                            ),
                       ),
                     ),
                     if (_selectedCVFile != null) SizedBox(width: 10),
@@ -252,51 +265,57 @@ class _Student_regState extends State<Student_reg> {
                   ],
                 ),
                 SizedBox(height: 40),
-               ElevatedButton(
-  onPressed: () {
-    if (_formKey.currentState?.validate() ?? false) {
-      // Perform registration logic here
-      // You can send the form data to a server, save to a database, etc.
-    }
-  },
-  child: Text('Submit'),
-  style: ElevatedButton.styleFrom(
-    primary: Colors.lightBlue.shade900,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(10),
-    ),
-    padding: EdgeInsets.symmetric(vertical: 15),
-    minimumSize: Size(50, 50), // Adjust the size of the button
-  ),
-)
-
+                ElevatedButton(
+                  onPressed: () {
+                    if (_formKey.currentState?.validate() ?? false) {
+                      // Perform registration logic here
+                      // You can send the form data to a server, save to a database, etc.
+                      Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => student_prof()));
+                    }
+                  },
+                
+                  child:
+                   Text(
+                    'Submit',
+                    style: GoogleFonts.aboreto(
+                        fontWeight: FontWeight.bold, fontSize: 18),
+                  ),
+              
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.lightBlue.shade900,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    padding: EdgeInsets.symmetric(vertical: 15),
+                    minimumSize: Size(50, 50), // Adjust the size of the button
+                  ),
+                )
               ],
             ),
           ),
         ),
       ),
-    //   floatingActionButton: Container(height: 40,width: double.maxFinite,
-    //     child: FloatingActionButton(onPressed: () {  },
-    //     child: Container(height: 40,width: double.maxFinite,
-    //       child: ElevatedButton(
-    //       onPressed: () {
-    //         if (_formKey.currentState?.validate() ?? false) {
-    //           // Perform registration logic here
-    //           // You can send the form data to a server, save to a database, etc.
-    //         }
-    //       },
-    //       child: Text('Submit'),
-    //       style: ElevatedButton.styleFrom(
-    //         primary: Colors.blue,
-    //         padding: EdgeInsets.symmetric(vertical: 15),
-    //       ),
-    // ),
-    //     ),
-    //     ),
-    //   ),
-    //   floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      //   floatingActionButton: Container(height: 40,width: double.maxFinite,
+      //     child: FloatingActionButton(onPressed: () {  },
+      //     child: Container(height: 40,width: double.maxFinite,
+      //       child: ElevatedButton(
+      //       onPressed: () {
+      //         if (_formKey.currentState?.validate() ?? false) {
+      //           // Perform registration logic here
+      //           // You can send the form data to a server, save to a database, etc.
+      //         }
+      //       },
+      //       child: Text('Submit'),
+      //       style: ElevatedButton.styleFrom(
+      //         primary: Colors.blue,
+      //         padding: EdgeInsets.symmetric(vertical: 15),
+      //       ),
+      // ),
+      //     ),
+      //     ),
+      //   ),
+      //   floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
-
   }
 }
-
